@@ -8,8 +8,8 @@ import VueExample from "./components/VueExample.vue";
 <template>
   <div>
     <!-- <Play /> -->
-    <!-- <BthAppStatus /> -->
-    <VueExample />
+    <BthAppStatus />
+    <!-- <VueExample /> -->
   </div>
 </template>
 
