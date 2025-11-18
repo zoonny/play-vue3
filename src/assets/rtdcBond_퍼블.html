@@ -1,0 +1,747 @@
+<!--  BOND 등급서1  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style scoped="scoped">
+      @page {
+        size: A4;
+        margin: 0mm;
+      }
+      /************글꼴*****************/
+      @font-face {
+        font-family: "Times_New_Roman";
+        src: url(/font/Times\ New\ Roman.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "Times_New_Roman_Bold";
+        src: url(/font/Times\ New\ Roman\ -\ Bold.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "KoPubWorld Dotum Light";
+        src: url(/font/KoPubWorld\ Dotum\ Light.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "KoPubWorld Dotum Medium";
+        src: url(/font/KoPubWorld\ Dotum\ Medium.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "KoPubWorld Dotum Bold";
+        src: url(/font/KoPubWorld\ Dotum\ Bold.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "KoPubWorld Batang Light";
+        src: url(/font/KoPubWorld\ Batang\ Light.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "KoPubWorld Batang Medium";
+        src: url(/font/KoPubWorld\ Batang\ Medium.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "KoPubWorld Batang Bold";
+        src: url(/font/KoPubWorld\ Batang\ Bold.ttf) format("truetype");
+      }
+      body,
+      dl,
+      ul,
+      ol,
+      h1,
+      h2,
+      h3 menu,
+      li,
+      tr,
+      th,
+      td {
+        list-style: none;
+        font-weight: normal;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        text-indent: initial;
+      }
+
+      /* body set up width: 775px */
+      body {
+        /* A4 가로  210mm*/
+        /* A4 세로  297mm*/
+        width: 794px;
+        height: 1122px;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      /* 가장 밖 table*/
+
+      /* 배경 있는 table */
+      .table-all {
+        position: relative;
+        border-collapse: collapse;
+        width: 794px;
+        height: 1122px;
+        border: none;
+        background-image: url(/img/report_bg01.JPG);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        table-layout: fixed;
+      }
+      .table-all tr th {
+        background-color: transparent;
+        /* text-align: center; */
+        vertical-align: top;
+        border: none;
+        border-collapse: collapse;
+      }
+      .table-all tr td {
+        background-color: transparent;
+        text-align: center;
+        vertical-align: top;
+        border: none;
+        border-collapse: collapse;
+      }
+      /* 배경 없는 table */
+      .table-all-no {
+        position: relative;
+        border-collapse: collapse;
+        width: 794px;
+        height: 1122px;
+        border: none;
+        table-layout: fixed;
+      }
+      .table-all-no tr th {
+        background-color: transparent;
+        text-align: center;
+        vertical-align: top;
+        border: none;
+        border-collapse: collapse;
+      }
+      .table-all-no tr td {
+        background-color: transparent;
+        text-align: center;
+        vertical-align: top;
+        border: none;
+        border-collapse: collapse;
+      }
+      .table-in {
+        border-collapse: collapse;
+        border: none;
+        text-align: center;
+        vertical-align: middle;
+        width: 644px;
+        margin: 170px 75px 0px 75px;
+      }
+      .table-in tr td {
+        text-align: center;
+        vertical-align: middle;
+        border-collapse: collapse;
+        border: none;
+      }
+
+      /*-- header  -- */
+      .table-top {
+        border-collapse: collapse;
+        width: 100%;
+        border: none;
+        table-layout: fixed;
+      }
+
+      .table-top tr {
+        border: none;
+        width: 100%;
+      }
+
+      .table-top th,
+      .table-top td {
+        border: none;
+      }
+
+      .table-top-no {
+        border-collapse: collapse;
+        border-spacing: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        text-align: right;
+        width: 100%;
+        white-space: nowrap;
+      }
+
+      .table-top-no tr {
+        border: none;
+        border-spacing: 0;
+        width: 100%;
+        padding: 0;
+      }
+
+      .table-top-no th {
+        border: none;
+        text-align: left;
+        padding: 0 3px;
+        font-size: 13px;
+        font-family: "KoPubWorld Batang Light";
+        letter-spacing: -0.5px;
+        line-height: -1;
+        height: 20px;
+      }
+
+      .table-top-no td {
+        border: none;
+        text-align: left;
+        padding: 0px;
+        font-size: 13px;
+        font-family: "KoPubWorld Batang Light";
+        letter-spacing: -0.5px;
+        line-height: -1;
+        height: 20px;
+      }
+      .table-top-no .issu-notit {
+        width: 30px;
+        text-align: left;
+        padding: 0 5px;
+      }
+      .table-top-no .issu-number {
+        width: 200px;
+        letter-spacing: -0.5px;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .cont-title {
+        width: 100%;
+        text-align: left;
+        table-layout: fixed;
+      }
+      .cont-title .headtitle {
+        margin-top: 40px;
+        font-size: 24px;
+        font-family: "KoPubWorld Batang Bold";
+        background: none;
+        letter-spacing: 0px;
+        line-height: 1.2;
+        text-align: left;
+        height: 40px;
+      }
+
+      .cont-title span {
+        font-size: 16px;
+        font-family: "KoPubWorld Batang Bold";
+        text-align: left;
+      }
+      /*-- 한글 text  -- */
+      .text-kor {
+        font-size: 13px;
+        font-family: "KoPubWorld Batang Light";
+        text-align: left;
+        padding-top: 0px;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+        width: 100%;
+        height: 30px;
+      }
+      /*-- 영문 text  -- */
+      .text-eng {
+        font-size: 13px;
+        font-family: "KoPubWorld Batang Light";
+        text-align: left;
+        padding-top: 0px;
+        letter-spacing: -1px;
+        line-height: 1.2;
+        width: 100%;
+        height: 30px;
+      }
+
+      /*-- body  -- */
+      .table-body {
+        border-collapse: collapse;
+        width: 100%;
+        border: none;
+      }
+
+      .table-body th,
+      .table-body td {
+        border: none;
+      }
+
+      /* 기본 table 01  */
+      .table-basic {
+        /* border-collapse: collapse; */
+        border: 0.5px solid #000;
+        width: 100%;
+        /* width: 500px; */
+        table-layout: fixed; /* table 고정  */
+      }
+      .table-basic th {
+        width: 20%;
+        /* text-align: left; */
+        /* padding: 2px 10px; */
+        font-size: 13px;
+        font-family: "KoPubWorld Batang Light";
+        background-color: white;
+      }
+      .table-basic td {
+        text-align: left;
+        padding: 2px 6px;
+        font-size: 13px;
+        font-family: "KoPubWorld Batang Light";
+      }
+      .table-basic .left {
+        border: 0.5px solid #000;
+        line-height: 1.2;
+        text-align: left;
+        vertical-align: middle;
+        height: 40px;
+      }
+      .table-basic .center {
+        border: 0.5px solid #000;
+        line-height: 1.2;
+        text-align: center;
+        vertical-align: middle;
+        height: 40px;
+      }
+      .table-basic .justify {
+        border: 0.5px solid #000;
+        line-height: 1.2;
+      }
+
+      .big {
+        font-size: 54px;
+        font-family: "KoPubWorld Batang Bold";
+        /* font-weight: bold; */
+      }
+
+      .mid {
+        font-size: 16px;
+        font-family: "KoPubWorld Batang Bold";
+      }
+      .mid2 {
+        font-size: 13px;
+        font-family: "KoPubWorld Batang Bold";
+      }
+
+      .small {
+        font-size: 11px;
+        font-family: "KoPubWorld Batang Medium";
+        border: 0.5px solid #000;
+      }
+
+      /*-- in table  -- */
+
+      .inner-table {
+        border: none;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+      }
+
+      .inner-table td {
+        border: none;
+        padding: 0px 0px;
+      }
+
+      /*-- ◈ 유  의  사  항  -- */
+
+      .cont-info {
+        padding-top: 0px;
+        text-align: left;
+        width: 100%;
+      }
+      .cont-info p {
+        font-size: 12px;
+        font-family: "KoPubWorld Batang Light";
+      }
+      .cont-info pre {
+        margin-top: 12px;
+        font-family: "KoPubWorld Batang Light";
+        font-size: 9pt;
+        letter-spacing: 0px;
+      }
+      .cont-info .num-item p {
+        font-size: 12px;
+        padding-left: 0px;
+        font-family: "KoPubWorld Batang Light";
+        margin-top: -13px;
+        margin-left: -5px;
+        line-height: 1.3;
+      }
+      .cont-info .num-item .letter-04 {
+        letter-spacing: -0.4px;
+      }
+      .cont-info .num-item .letter-10 {
+        letter-spacing: -1px;
+      }
+      .cont-info .num-item p .span {
+        font-family: "KoPubWorld Batang Light";
+        font-size: 12px;
+        letter-spacing: 0;
+      }
+
+      .cont-info .num-list {
+        counter-reset: number 0;
+        margin-top: 0px;
+        margin-left: -17px;
+      }
+      .cont-info .num-item {
+        position: relative;
+      }
+      .cont-info .num-item::before {
+        counter-increment: number 1;
+        content: counter(number) ".";
+        list-style-position: outside;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: -20px;
+        font-family: "KoPubWorld Batang Light";
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
+      /*-- footer  -- */
+      .table-footer {
+        border-collapse: collapse;
+        width: 100%;
+        border: 0px solid #000;
+        font-size: 12px;
+        font-family: "KoPubWorld Batang Light";
+        text-align: left;
+        letter-spacing: 0px;
+      }
+
+      .table-footer th,
+      .table-footer td {
+        border: 0px solid #000;
+        text-align: left;
+      }
+
+      /* 배경 */
+      .docu {
+        position: relative;
+        width: 100%;
+        padding: 0;
+      }
+      .docu .report_bg img {
+        height: auto;
+        width: 100%;
+      }
+      .docu-wrap {
+        padding: 0px 75px 40px 75px;
+        position: absolute;
+      }
+      .cont {
+        position: absolute;
+        border: 0px solid #eee;
+        font-family: "KoPubWorld Batang Light";
+        z-index: 9999;
+      }
+
+      /* added by hyung */
+
+      /* vertical-align을 포기하고 padding-top을 직접 계산해서 넣는 것 */
+      /* 예: 셀 높이 50px, 글자 크기 약 16px인 경우 */
+      /* (50 - 13) / 2 = 17px */
+      /* (30 - 13) / 2 = 7px */
+
+      /* PDF 엔진을 위한 정렬 클래스 */
+      .pdf-justify {
+        font-size: 13px;
+        border: 1px solid #000;
+        /* height: 32px; */
+        padding: 0 10px;
+        /* vertical-align: middle; */
+        padding-top: 16px;
+
+        /* 1. 양쪽 정렬 선언 */
+        text-align: justify;
+        /* openhtmltopdf는 display: block이나 inline-block 요소에서 justify가 잘 먹힙니다. */
+        display: table-cell;
+        /* 혹시 모를 간섭 방지를 위해 line-height 초기화 */
+        line-height: normal;
+      }
+
+      /* 2. 가상 요소 트릭 (핵심) */
+      /* 내용 뒤에 '가상의 빈 줄'을 강제로 만들어서 윗줄을 양쪽 정렬 시킴 */
+      .pdf-justify::after {
+        content: " ";
+        display: inline-block;
+        width: 100%;
+        font-size: 0;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="docu" contenteditable="true">
+      <table class="table-all">
+        <tr>
+          <td>
+            <table class="table-in">
+              <tr>
+                <td>
+                  <!-- header -->
+                  <tr>
+                    <td>
+                      <table class="table-top">
+                        <tr>
+                          <td>
+                            <!-- header-no -->
+                            <table class="table-top-no">
+                              <tr style="height: 15px">
+                                <td style="width: 70%"></td>
+                                <td style="width: 30px">
+                                  <table style="width: 100%">
+                                    <tr>
+                                      <th>교</th>
+                                      <th>부</th>
+                                      <th>번</th>
+                                      <th>호</th>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td class="issu-notit">:</td>
+                                <td class="issu-number">25-BOND-00716-a호</td>
+                              </tr>
+                              <tr style="height: 15px">
+                                <td style="width: 70%"></td>
+                                <td style="width: 30px">
+                                  <table style="width: 100%">
+                                    <tr>
+                                      <th style="text-align: left">교</th>
+                                      <th style="text-align: center">부</th>
+                                      <th style="text-align: right">일</th>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td class="issu-notit">:</td>
+                                <td style="text-align: left">
+                                  <table style="width: 100%">
+                                    <tr>
+                                      <td style="text-align: left; width: 47px">
+                                        2025년
+                                      </td>
+                                      <td style="text-align: left; width: 33px">
+                                        03월
+                                      </td>
+                                      <td style="text-align: left; width: 33px">
+                                        06일
+                                      </td>
+                                      <td style="text-align: right"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr style="width: 100%">
+                          <!-- header-Title -->
+                          <td class="cont-title">
+                            <div class="headtitle">
+                              에스엘엘중앙(주) <span>귀중</span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-kor" style="text-align: left">
+                            귀사의 회사채 신용평가 의뢰에 따라 당사의 평가기준에
+                            의하여 실시한 평가 결과는 다음과 같습니다.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- body -->
+                  <tr>
+                    <td>
+                      <table class="table-body">
+                        <tr>
+                          <td>
+                            <!-- body-table01 -->
+                            <table class="table-basic">
+                              <tr>
+                                <th class="pdf-justify justify">
+                                  발 행 회 사 채 명
+                                </th>
+                                <td class="left">
+                                  에스엘엘중앙(주) <br />제18-1회 무보증사채
+                                </td>
+                                <td class="center" style="width: 240px">
+                                  <span class="mid">회사채 신용등급</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th class="pdf-justify justify">발 행 자</th>
+                                <!-- <th class="center">
+                                  <table class="inner-table">
+                                    <tr>
+                                      <td style="text-align: left">발</td>
+                                      <td style="text-align: center">행</td>
+                                      <td style="text-align: right">자</td>
+                                    </tr>
+                                  </table>
+                                </th> -->
+                                <td class="left">
+                                  에스엘엘중앙(주)<br />(대표자 박준서/윤기윤)
+                                </td>
+                                <td class="center" rowspan="5">
+                                  <span class="big">BBB</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th class="pdf-justify justify">
+                                  발 행 권 면 총 액
+                                </th>
+                                <td class="left">
+                                  일백오십억원(15,000,000,000원)
+                                </td>
+                              </tr>
+                              <tr>
+                                <th class="pdf-justify justify">
+                                  발 행 일 / 만 기 일
+                                </th>
+                                <!-- <th class="center">
+                                  <table class="inner-table">
+                                    <tr>
+                                      <td style="text-align: left">발</td>
+                                      <td style="text-align: center">행</td>
+                                      <td style="text-align: center">일</td>
+                                      <td style="text-align: center">/</td>
+                                      <td style="text-align: center">만</td>
+                                      <td style="text-align: center">기</td>
+                                      <td style="text-align: right">일</td>
+                                    </tr>
+                                  </table>
+                                </th> -->
+                                <td class="left">2025년 03월 / 2026년 03월</td>
+                              </tr>
+                              <tr>
+                                <th class="pdf-justify justify">
+                                  재 무 재 표 기 준 일
+                                </th>
+                                <!-- <th class="center">
+                                  <table class="inner-table">
+                                    <tr>
+                                      <td style="text-align: left">재</td>
+                                      <td style="text-align: center">무</td>
+                                      <td style="text-align: center">제</td>
+                                      <td style="text-align: center">표</td>
+                                      <td style="text-align: center">기</td>
+                                      <td style="text-align: center">준</td>
+                                      <td style="text-align: right">일</td>
+                                    </tr>
+                                  </table>
+                                </th> -->
+                                <td class="left">2023년 12월 31일</td>
+                              </tr>
+                              <tr>
+                                <th class="pdf-justify justify">평 가 일</th>
+                                <!-- <th class="center">
+                                  <table class="inner-table">
+                                    <tr>
+                                      <td style="text-align: left">평</td>
+                                      <td style="text-align: center">가</td>
+                                      <td style="text-align: right">일</td>
+                                    </tr>
+                                  </table>
+                                </th> -->
+                                <td class="left">2024년 05월 30일</td>
+                              </tr>
+                              <tr>
+                                <th class="pdf-justify justify">용 도</th>
+                                <!-- <th class="center">
+                                  <table class="inner-table">
+                                    <tr>
+                                      <td style="text-align: left">용</td>
+                                      <td style="text-align: right">도</td>
+                                    </tr>
+                                  </table>
+                                </th> -->
+                                <td class="left">무보증사채 발행용</td>
+                                <td class="center">
+                                  <span class="mid2"
+                                    >Rating Outlook : 안정적(Stable)</span
+                                  >
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- footer info -->
+                  <tr>
+                    <td>
+                      <table class="table-footer">
+                        <tr>
+                          <div class="cont-info">
+                            <div>
+                              <pre>◈  유  의  사  항</pre>
+                              <ul class="num-list">
+                                <li class="num-item">
+                                  <p>
+                                    상기 신용등급은 평가대상 회사채의 상환능력
+                                    및 그 안정성을 당사의 평가기준에 따라 일정
+                                    시점에서 평가한 의견을 나타낸 것으로서,
+                                    시점에 따라 변동될 수 있습니다.
+                                  </p>
+                                </li>
+                                <li class="num-item">
+                                  <p>
+                                    본 평가대상 회사채 등급부여 이후 3개월이
+                                    경과할 때까지 본 평가대상 회사채가 미발행된
+                                    경우에는 본 신용 등급이 취소될 수 있습니다.
+                                  </p>
+                                </li>
+                                <li class="num-item">
+                                  <p>
+                                    용도 이외의 사용은 무효이며, 신용등급에 대한
+                                    확인 및 문의사항은
+                                    평가정책실(TEL:02-787-2353,
+                                    www.kisrating.com)로 연락하여 주시기
+                                    바랍니다.
+                                  </p>
+                                </li>
+                                <li class="num-item">
+                                  <p>
+                                    당사의 신용평가실적서, 신용등급변화표,
+                                    평균누적부도율표, 평가의견은 별첨 자료를
+                                    참고하시기 바랍니다.
+                                  </p>
+                                </li>
+                                <li class="num-item">
+                                  <p>
+                                    신용등급의 이용 시 등급정의 및 유의사항을
+                                    참고하시기 바랍니다.
+                                  </p>
+                                </li>
+                                <li class="num-item">
+                                  <p>
+                                    본 신용평가서(교부번호:25-BOND-00716-a)는
+                                    수요예측에 의한 채무증권의 발행조건이
+                                    확정되기 전 발행사의 이사회 결의내용을
+                                    고려한 신용평가를 토대로 작성된 것입니다.
+                                    향후 발행조건이 확정되면 신용평가서가 정정
+                                    발급될수 있습니다.
+                                  </p>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      table {
+        width: 300px;
+        border-collapse: collapse;
+      }
+
+      .justify-td {
+        border: 1px solid #000;
+        height: 30px;
+
+        /* 1. 가로 양쪽 끝 정렬 핵심 설정 */
+        text-align: justify;
+        text-align-last: justify; /* 마지막 줄(한 줄짜리)도 강제 정렬 */
+
+        /* 2. 세로 중앙 정렬 (td는 기본적으로 vertical-align을 지원함) */
+        vertical-align: middle;
+
+        /* 3. 양옆 여백 (글자가 테두리에 딱 붙지 않게) */
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class="justify-td">이 름</td>
+      </tr>
+      <tr>
+        <td class="justify-td">전 화 번 호</td>
+      </tr>
+      <tr>
+        <td class="justify-td">P h o n e N u m</td>
+      </tr>
+    </table>
+  </body>
+</html>

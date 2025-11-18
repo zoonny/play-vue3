@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* 1. 바깥쪽 td: 세로 중앙 정렬만 담당 */
+      .cell-vertical {
+        border: 1px solid #000;
+        height: 40px; /* 셀의 고정 높이 */
+        vertical-align: middle; /* 내부의 div를 세로 중앙에 둠 */
+        padding: 0 20px; /* 좌우 여백 */
+      }
+
+      /* 2. 안쪽 div: 가로 양쪽 정렬만 담당 */
+      .text-justify {
+        font-size: 14px;
+        width: 100%;
+        text-align: justify;
+        /* 혹시 모를 높이 간섭 제거를 위해 line-height 지정 */
+        margin-top: 20px;
+        line-height: 1.2;
+      }
+
+      /* 3. 가상 요소 트릭 (안쪽 div에 적용) */
+      .text-justify::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 0;
+
+        /* PDF 엔진 호환성을 위한 추가 설정 */
+        line-height: 0;
+        font-size: 0;
+
+        /* ★ 중요: 가상 요소가 윗줄에 영향을 주지 않도록 
+       margin을 사용하여 위치를 강제로 조정하거나 무시하게 함 */
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class="cell-vertical">
+          <div class="text-justify">이 름</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cell-vertical">
+          <div class="text-justify">전 화 번 호</div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

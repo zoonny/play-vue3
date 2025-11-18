@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* PDF용 폰트 설정 (필수: 한글이 지원되는 폰트 경로 지정 필요) */
+      body {
+        font-family: "Malgun Gothic", sans-serif; /* 서버에 설치된 폰트명 */
+      }
+
+      table {
+        width: 300px;
+        border-collapse: collapse;
+      }
+
+      /* vertical-align을 포기하고 padding-top을 직접 계산해서 넣는 것 */
+      /* 예: 셀 높이 50px, 글자 크기 약 16px인 경우 */
+      /* (50 - 16) / 2 = 17px */
+      /* (30 - 16) / 2 = 7px */
+
+      /* PDF 엔진을 위한 정렬 클래스 */
+      .pdf-justify {
+        font-size: 16px;
+        border: 1px solid #000;
+        height: 32px;
+        padding: 0 10px;
+        /* vertical-align: middle; */
+        padding-top: 16px;
+
+        /* 1. 양쪽 정렬 선언 */
+        text-align: justify;
+        /* openhtmltopdf는 display: block이나 inline-block 요소에서 justify가 잘 먹힙니다. */
+        display: table-cell;
+        /* 혹시 모를 간섭 방지를 위해 line-height 초기화 */
+        line-height: normal;
+      }
+
+      /* 2. 가상 요소 트릭 (핵심) */
+      /* 내용 뒤에 '가상의 빈 줄'을 강제로 만들어서 윗줄을 양쪽 정렬 시킴 */
+      .pdf-justify::after {
+        content: " ";
+        display: inline-block;
+        width: 100%;
+        font-size: 0;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class="pdf-justify">이 름</td>
+      </tr>
+      <tr>
+        <td class="pdf-justify">전 화 번 호</td>
+      </tr>
+      <tr>
+        <td class="pdf-justify">P h o n e</td>
+      </tr>
+    </table>
+  </body>
+</html>
